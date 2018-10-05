@@ -1,0 +1,65 @@
+README
+part1:
+在part1.m 按run，其中裡面會call到ComputeBezier.m
+一開始會出現讓使用者點points(先出現36的，點完後按enter，再出現72的，點完後按enter)
+
+再來會show出3個figure:
+1.part1-a
+包含sampling rate=36,leve;=Low Compute the Bezier curve後的圖
+sampling rate=36,leve;=High Compute the Bezier curve後的圖
+sampling rate=72,leve;=Low Compute the Bezier curve後的圖
+sampling rate=72,leve;=High Compute the Bezier curve後的圖
+
+2. part1-b-original
+sampling rate=72,leve;=High Compute the Bezier curve後的圖(未放大前)
+
+3. part1-b-scaling
+sampling rate=72,leve;=High Compute the Bezier curve後的圖(放大後)
+
+/********************************************************/
+part1.m裡面會call到ComputeBezier.m
+
+1.ComputeBezier.m
+傳入:
+(1)ctrlPointList : control points
+(2)N : control points數
+(3)LoD : Levels of detail
+(4)c : 1
+
+傳回out
+算好Bezier curve後傳回part1.m
+
+2.part1.m
+功能:
+(1)讀image
+(2)實做mouse input
+(3)畫polygon
+(4)scaling
+
+/=========================================================/
+part2:
+(a)在part2_makeRGBCube.m 按run
+會出現1個figure顯示complete cube(如HW4_supplement.pptx第6頁的圖)
+
+(b)在part2_readOBJFile.m 按run
+會出現8個figure
+figure1:六角柱
+figure2:2(d)的結果
+figure3:directional light
+figure4:positional light
+figure5:I. (ka , kd , ks) = (1.0, 0.0, 0.0)
+figure6:II. (ka , kd , ks) = (0.1, 1.0, 0.0)
+figure7:III. (ka , kd , ks) = (0.1, 0.1, 1.0)
+figure8:IV. (ka , kd , ks) = (0.1, 0.8, 1.0)
+
+1.part2_readOBJFile.m
+功能:
+(1)讀進川普模型
+(2)建六角柱模型
+(3)合併2個模型
+(4)用positional light and directional light打光
+(5)adjusting different ambient strength ka, diffuse strength kd, specular strength ks.
+
+
+
+
