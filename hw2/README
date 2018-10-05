@@ -1,0 +1,50 @@
+README
+Q1:
+/********************************************************************/
+在HW2_Q1.m 按run，其中裡面會call到myFilter跟makeSpectrum
+會show出10張圖:
+spectrum of the input signal、
+spectrums of the output signals(low-pass，bandpass，high-pass)、
+spectrums of the filters(low-pass，bandpass，high-pass)、
+shapes of the filters(low-pass，bandpass，high-pass)
+並產生5個wav檔
+FilterName_Blackman_bandpass.wav
+FilterName_Blackman_high-pass.wav
+FilterName_Blackman_low-pass.wav
+Echo_one.wav
+Echo_multiple.wav
+/**********************************************************************/
+HW2_Q1.m:
+目的:
+讀進原本的音訊，call到myFilter去分離出3首歌，並存成3個wav檔。
+FilterName_Blackman_bandpass.wav
+FilterName_Blackman_high-pass.wav
+FilterName_Blackman_low-pass.wav
+再把low_pass_filter後產生的audio signal做one-fold echo and multiple-fold echo，並存成2個wav檔。
+Echo_one.wav
+Echo_multiple.wav
+/**********************************************************************/
+myFilter.m:
+目的:
+傳入inputSignal, fsample, N, windowName, filterName, fcutoff，
+實做3種filters(low-pass,bandpass,high-pass)及 Blackman windowing function及1-D convolution。
+回傳實做後產生的outputSignal, outputFilter。
+/**********************************************************************/
+Q2:
+/**********************************************************************/
+在在HW2_Q2.m 按run，其中裡面會call到myFilter跟makeSpectrum
+會show出12張圖:
+shape and spectrum of input signals、
+The shape and spectrum of output signals(shape有2張:1張是全圖，另一張是只顯示部分)
+The shape and spectrum of the result of audio dithering and noise shaping(shape各有2張:1張是全圖，另一張是只顯示部分)
+並產生5個wav檔
+Tempest_8bit.wav
+Tempest_Recover.wav
+/**********************************************************************/
+HW2_Q2.m:
+目的:
+讀進原本的音訊，
+(1)先做bit reduction(reduce the signal from 16-bit to 8-bit),並存成Tempest_8bit.wav。
+(2)用bit reduction後的音訊實做Audio dithering及Noise shaping
+(3)call到myFilter做low-pass filter
+(4)用myFilter回傳的音訊做audio limiting及Normalization，最後存成Tempest_Recover.wav。
