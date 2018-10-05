@@ -1,0 +1,64 @@
+README
+Q1:
+在HW3_main.m 按run，其中裡面會call到full_search.m跟twoD_logarithmic_search.m
+會跑有點久(約1分半~2分多)~不好意思
+會show出7個figure:
+1. a:predicted images
+包含full_search跟2D logarithmic_search的
+N=8,p=8、N=16,p=8、N=8,p=16、N=16,p=16產生的predicted images
+
+2. b:motion vectors images
+包含full_search跟2D logarithmic_search的
+N=8,p=8、N=16,p=8、N=8,p=16、N=16,p=16產生的motion vectors images
+
+3. c:residual images
+包含full_search跟2D logarithmic_search的
+N=8,p=8、N=16,p=8、N=8,p=16、N=16,p=16產生的residual images
+
+4. SAD
+印出折現圖
+5. PSNR
+印出折現圖
+6. Q2
+印出Q1及Q2 full search，p=8，8*8算出的PSNR值
+7. CPU Time
+印出Q1
+full_search跟2D logarithmic_search的
+N=8,p=8、N=16,p=8、N=8,p=16、N=16,p=16的CPU time
+
+/********************************************************/
+HW3_main.m裡面會call到full_search.m跟twoD_logarithmic_search.m跟generate_residual_image.m
+
+1.full_search.m
+傳入N,p,Target image,Reference image
+傳回predicted image image,MV
+主要在做full_search
+裡面會呼叫到SAD.m，用來算SAD值。
+
+2.SAD.m
+傳入Target image block,Reference image block
+傳回算好的SAD_value
+
+3.twoD_logarithmic_search.m
+傳入N,p,Target image,Reference image
+傳回predicted image image,MV
+主要在做2D logarithmic_search
+裡面會呼叫到SAD.m，用來算SAD值。
+以及endFind.m，用來實做2D logarithmic_search做到最後n=1時做後比較的部分
+
+4.endFind.m
+傳入Target,Reference,N,i,j,findi,findj,n
+傳回fsad,fi,fj
+i,j:Reference image block左上角坐標。
+findi,findj:目前SAD最小的block的左上角坐標。
+fsad:坐完最後一次比較後最小的SAD值。
+fi,fj:坐完最後一次比較後SAD值最小的block的左上角坐標。
+
+5.generate_residual_image.m
+傳入Target image,predicted image 
+傳回residual_image
+將Target image,predicted image 相減得到residual_image。
+
+
+
+
